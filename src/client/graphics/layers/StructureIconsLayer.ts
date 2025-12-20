@@ -275,15 +275,16 @@ export class StructureIconsLayer implements Layer {
             canBuild: false,
             canUpgrade: false,
           });
-          this.updateGhostPrice(0);
+          this.updateGhostPrice(0, "Invalid placement");
           this.ghostUnit.container.filters = [
             new OutlineFilter({ thickness: 2, color: "rgba(255, 0, 0, 1)" }),
           ];
           return;
         }
 
+        const warning = this.resolveGhostWarning(unit, tileRef);
         this.ghostUnit.buildableUnit = unit;
-        this.updateGhostPrice(unit.cost ?? 0);
+        this.updateGhostPrice(unit.cost ?? 0, warning ?? undefined);
 
         const targetLevel = this.resolveGhostRangeLevel(unit);
         this.updateGhostRange(targetLevel);
@@ -318,10 +319,35 @@ export class StructureIconsLayer implements Layer {
       });
   }
 
-  private updateGhostPrice(cost: bigint | number) {
+  private resolveGhostWarning(
+    unit: BuildableUnit,
+    tileRef: TileRef | undefined,
+  ): string | null {
+    const player = this.game.myPlayer();
+    if (!player) return null;
+
+    if (player.gold() < unit.cost) {
+      return "Insufficient Gold";
+    }
+    if (tileRef) {
+      if (unit.type === UnitType.Port && !this.game.isOceanShore(tileRef)) {
+        return "Needs coastline";
+      }
+      if (unit.type === UnitType.Warship && !this.game.isOcean(tileRef)) {
+        return "Needs water";
+      }
+    }
+    if (unit.canBuild === false && unit.canUpgrade === false) {
+      return "Invalid placement";
+    }
+    return null;
+  }
+
+  private updateGhostPrice(cost: bigint | number, overrideText?: string) {
     if (!this.ghostUnit) return;
     const { priceText, priceBg, priceBox } = this.ghostUnit;
-    priceText.text = renderNumber(cost);
+    priceText.text = overrideText ?? renderNumber(cost);
+    priceText.tint = overrideText ? 0xff6b6b : 0xffffff;
     priceText.position.set(0, priceBox.y);
 
     const textWidth = priceText.width;

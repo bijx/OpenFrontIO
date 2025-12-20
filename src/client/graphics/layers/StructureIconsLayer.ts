@@ -326,6 +326,7 @@ export class StructureIconsLayer implements Layer {
     const player = this.game.myPlayer();
     if (!player) return null;
 
+    // TODO: put text in lang file
     if (player.gold() < unit.cost) {
       return "Insufficient Gold";
     }
@@ -333,8 +334,13 @@ export class StructureIconsLayer implements Layer {
       if (unit.type === UnitType.Port && !this.game.isOceanShore(tileRef)) {
         return "Needs coastline";
       }
-      if (unit.type === UnitType.Warship && !this.game.isOcean(tileRef)) {
-        return "Needs water";
+      if (unit.type === UnitType.Warship) {
+        if (!this.game.isOcean(tileRef)) {
+          return "Needs water";
+        }
+        if (player.units(UnitType.Port).length === 0) {
+          return "Need ports";
+        }
       }
     }
     if (unit.canBuild === false && unit.canUpgrade === false) {

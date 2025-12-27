@@ -43,6 +43,7 @@ export const MapDescription: Record<keyof typeof GameMapType, string> = {
   GulfOfStLawrence: "Gulf of St. Lawrence",
   Lisbon: "Lisbon",
   Manicouagan: "Manicouagan",
+  SoutheastAsia: "Southeast Asia",
 };
 
 @customElement("map-display")

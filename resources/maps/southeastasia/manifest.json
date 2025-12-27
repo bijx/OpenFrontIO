@@ -1,0 +1,120 @@
+{
+  "map": {
+    "height": 1224,
+    "num_land_tiles": 800771,
+    "width": 1800
+  },
+  "map16x": {
+    "height": 306,
+    "num_land_tiles": 47706,
+    "width": 450
+  },
+  "map4x": {
+    "height": 612,
+    "num_land_tiles": 196961,
+    "width": 900
+  },
+  "name": "southeastasia",
+  "nations": [
+    {
+      "coordinates": [1656, 714],
+      "flag": "xx",
+      "name": "Kalimantan Barat"
+    },
+    {
+      "coordinates": [602, 572],
+      "flag": "xx",
+      "name": "Riau"
+    },
+    {
+      "coordinates": [935, 1043],
+      "flag": "xx",
+      "name": "Sumatera Selatan"
+    },
+    {
+      "coordinates": [331, 390],
+      "flag": "xx",
+      "name": "Sumatera Utara"
+    },
+    {
+      "coordinates": [524, 755],
+      "flag": "xx",
+      "name": "Sumatera Barat"
+    },
+    {
+      "coordinates": [1370, 1003],
+      "flag": "xx",
+      "name": "Bangka-Belitung"
+    },
+    {
+      "coordinates": [1056, 1167],
+      "flag": "xx",
+      "name": "Lampung"
+    },
+    {
+      "coordinates": [1773, 930],
+      "flag": "xx",
+      "name": "Kalimantan Tengah"
+    },
+    {
+      "coordinates": [1404, 189],
+      "flag": "xx",
+      "name": "Kepulauan Riau"
+    },
+    {
+      "coordinates": [752, 869],
+      "flag": "xx",
+      "name": "Jambi"
+    },
+    {
+      "coordinates": [102, 215],
+      "flag": "xx",
+      "name": "Aceh"
+    },
+    {
+      "coordinates": [735, 228],
+      "flag": "xx",
+      "name": "Pahang"
+    },
+    {
+      "coordinates": [543, 111],
+      "flag": "xx",
+      "name": "Perak"
+    },
+    {
+      "coordinates": [1775, 444],
+      "flag": "xx",
+      "name": "Sarawak"
+    },
+    {
+      "coordinates": [663, 58],
+      "flag": "xx",
+      "name": "Kelantan"
+    },
+    {
+      "coordinates": [603, 274],
+      "flag": "xx",
+      "name": "Selangor"
+    },
+    {
+      "coordinates": [725, 1079],
+      "flag": "xx",
+      "name": "Bengkulu"
+    },
+    {
+      "coordinates": [820, 415],
+      "flag": "xx",
+      "name": "Johor"
+    },
+    {
+      "coordinates": [793, 99],
+      "flag": "xx",
+      "name": "Terengganu"
+    },
+    {
+      "coordinates": [692, 323],
+      "flag": "xx",
+      "name": "Negeri Sembilan"
+    }
+  ]
+}
